@@ -1,0 +1,87 @@
+machine:
+  install:
+    disk: ${install_disk}
+    image: factory.talos.dev/installer/${talos_image_id}:${talos_version}
+  network:
+    hostname: ${hostname}
+cluster:
+  allowSchedulingOnControlPlanes: true
+  inlineManifests:
+    # - name: metallb-namespace
+    #   contents: |-
+    #     apiVersion: v1
+    #     kind: Namespace
+    #     metadata:
+    #       name: metallb-system
+    #       labels:
+    #         pod-security.kubernetes.io/enforce: privileged
+    #         pod-security.kubernetes.io/audit: privileged
+    #         pod-security.kubernetes.io/warn: privileged
+    # - name: metallb
+    #   contents: |-
+    #     $${indent(8,metallb_manifest)}
+    # - name: metallb-ip-addresspool
+    #   contents: |-
+    #     apiVersion: metallb.io/v1beta1
+    #     kind: IPAddressPool
+    #     metadata:
+    #       name: homelab-pool
+    #       namespace: metallb-system
+    #     spec:
+    #       addresses:
+    #       %%{~ for addr in metallb_addresses ~}
+    #       - $${ addr }
+    #       %%{ endfor }
+    # - name: metallb-ip-addresspool-l2advertisement
+    #   contents: |-
+    #     apiVersion: metallb.io/v1beta1
+    #     kind: L2Advertisement
+    #     metadata:
+    #       name: homelab-l2advertisement
+    #       namespace: metallb-system
+    # - name: ingress-nginx-namespace
+    #   contents: |-
+    #     apiVersion: v1
+    #     kind: Namespace
+    #     metadata:
+    #       name: ingress-nginx
+    # - name: ingress-nginx
+    #   contents: |-
+    #     $${indent(8,ingress-nginx_manifest)}
+    # - name: cert-manager-namespace
+    #   contents: |-
+    #     apiVersion: v1
+    #     kind: Namespace
+    #     metadata:
+    #       name: cert-manager
+    # - name: cert-manager
+    #   contents: |-
+    #     $${indent(8,cert-manager_manifest)}
+    # - name: cert-manager-clusterissuer
+    #   contents: |-
+    #     apiVersion: cert-manager.io/v1
+    #     kind: ClusterIssuer
+    #     metadata:
+    #       name: letsencrypt-prod
+    #       namespace: cert-manager
+    #     spec:
+    #       acme:
+    #         server: https://acme-v02.api.letsencrypt.org/directory
+    #         email: $${cert-manager_email}
+    #         privateKeySecretRef:
+    #           name: letsencrypt-prod
+    #         solvers:
+    #           - http01:
+    #               ingress:
+    #                 class: nginx
+    - name: fluxcd-namespace
+      contents: |-
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: flux-system
+    - name: fluxcd
+      contents: |-
+        ${indent(8,fluxcd_manifest)}
+    
+    
