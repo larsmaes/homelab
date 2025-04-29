@@ -11,3 +11,4 @@ spec:
   secretRef:
     name: homelab
   url: https://github.com/larsmaes/test-application
+  provider: github
