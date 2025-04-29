@@ -30,6 +30,7 @@ data "talos_machine_configuration" "controlplane" {
       fluxcd_repo = templatefile("${path.module}/manifests/fluxcd/repository.yaml.tmpl", {
         github_repository_url = var.github_repository_url
       })
+      fluxcd_sync = file("${path.module}/manifests/fluxcd/gotk-sync.yaml")
     }),
   ]
 }
