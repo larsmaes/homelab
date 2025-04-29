@@ -10,5 +10,5 @@ spec:
     branch: main
   secretRef:
     name: homelab
-  url: https://github.com/larsmaes/test-application
-  provider: github
+  url: ssh://git@github.com/larsmaes/test-application
+  
