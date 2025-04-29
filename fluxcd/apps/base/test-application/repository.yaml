@@ -3,12 +3,11 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: test-application
-  namespace: test-application
+  namespace: flux-system
 spec:
   interval: 1m0s
   ref:
     branch: main
   secretRef:
     name: homelab
-    namespace: flux-system
   url: https://github.com/larsmaes/test-application
