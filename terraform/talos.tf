@@ -22,7 +22,7 @@ data "talos_machine_configuration" "controlplane" {
       // ingress-nginx_manifest = data.helm_template.ingress-nginx.manifest
       // cert-manager_manifest  = data.helm_template.cert-manager.manifest
       // cert-manager_email     = var.cert-manager_email
-      fluxcd_manifest        = templatefile("${path.module}/templates/fluxcd.helm.yaml.tmpl", {})
+      fluxcd_manifest        = file("${path.module}/manifests/fluxcd/install.yaml")
     }),
   ]
 }
