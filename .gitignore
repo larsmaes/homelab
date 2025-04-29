@@ -4,3 +4,4 @@
 .talosconfig
 .terraform*
 key.ssh**
+docker.json
