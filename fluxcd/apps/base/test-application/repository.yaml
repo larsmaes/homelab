@@ -10,4 +10,5 @@ spec:
     branch: main
   secretRef:
     name: homelab
+    namespace: flux-system
   url: https://github.com/larsmaes/test-application
