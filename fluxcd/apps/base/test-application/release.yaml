@@ -13,4 +13,5 @@ spec:
     name: test-application
     namespace: flux-system
   timeout: 3m0s
+  targetNamespace: test-application
   wait: true
