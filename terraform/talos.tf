@@ -17,11 +17,6 @@ data "talos_machine_configuration" "controlplane" {
       install_disk   = each.value.install_disk
       talos_version  = var.talos_version
       talos_image_id = local.talos_image_id
-      // metallb_manifest       = data.helm_template.metallb.manifest
-      // metallb_addresses      = var.metallb_addresses
-      // ingress-nginx_manifest = data.helm_template.ingress-nginx.manifest
-      // cert-manager_manifest  = data.helm_template.cert-manager.manifest
-      // cert-manager_email     = var.cert-manager_email
       fluxcd_manifest = file("${path.module}/manifests/fluxcd/install.yaml")
       fluxcd_repo_secret = templatefile("${path.module}/manifests/fluxcd/secret.yaml.tmpl", {
         private_key = file("${path.module}/${var.github_private_key_file}")
@@ -55,8 +50,6 @@ resource "talos_machine_configuration_apply" "controlplane" {
   machine_configuration_input = data.talos_machine_configuration.controlplane[each.key].machine_configuration
   for_each                    = { for k, v in var.talos_nodes : k => v if v.node_type == "controlplane" }
   node                        = split("/", each.value.ip)[0]
-
-
 }
 
 resource "talos_machine_configuration_apply" "worker" {
