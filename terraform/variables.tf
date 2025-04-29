@@ -65,3 +65,20 @@ variable "cert-manager_email" {
   type        = string
   
 }
+
+variable "github_private_key_file" {
+  description = "GitHub private key for FluxCD"
+  type        = string
+  sensitive   = true
+}
+
+variable "github_public_key_file" {
+  description = "GitHub public key for FluxCD"
+  type        = string
+  
+}
+
+variable "github_repository_url" {
+  description = "GitHub repository URL for FluxCD"
+  type        = string
+}

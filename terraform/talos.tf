@@ -13,16 +13,23 @@ data "talos_machine_configuration" "controlplane" {
   machine_secrets    = talos_machine_secrets.this.machine_secrets
   config_patches = [
     templatefile("${path.module}/templates/controlplane.yaml.tmpl", {
-      hostname               = each.key
-      install_disk           = each.value.install_disk
-      talos_version          = var.talos_version
-      talos_image_id         = local.talos_image_id
+      hostname       = each.key
+      install_disk   = each.value.install_disk
+      talos_version  = var.talos_version
+      talos_image_id = local.talos_image_id
       // metallb_manifest       = data.helm_template.metallb.manifest
       // metallb_addresses      = var.metallb_addresses
       // ingress-nginx_manifest = data.helm_template.ingress-nginx.manifest
       // cert-manager_manifest  = data.helm_template.cert-manager.manifest
       // cert-manager_email     = var.cert-manager_email
-      fluxcd_manifest        = file("${path.module}/manifests/fluxcd/install.yaml")
+      fluxcd_manifest = file("${path.module}/manifests/fluxcd/install.yaml")
+      fluxcd_repo_secret = templatefile("${path.module}/manifests/fluxcd/secret.yaml.tmpl", {
+        private_key = file("${path.module}/${var.github_private_key_file}")
+        public_key  = file("${path.module}/${var.github_public_key_file}")
+      })
+      fluxcd_repo = templatefile("${path.module}/manifests/fluxcd/repository.yaml.tmpl", {
+        github_repository_url = var.github_repository_url
+      })
     }),
   ]
 }

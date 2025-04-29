@@ -83,5 +83,11 @@ cluster:
     - name: fluxcd
       contents: |-
         ${indent(8,fluxcd_manifest)}
+    - name: fluxcd-repo-secret
+      contents: |-
+        ${indent(8,fluxcd_repo_secret)}
+    - name: fluxcd-repo
+      contents: |-
+        ${indent(8,fluxcd_repo)}
     
     
