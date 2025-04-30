@@ -4,3 +4,4 @@ resources:
   - metallb.yaml
   - ingress-nginx.yaml
   - cert-manager.yaml
+  - csi-driver-nfs.yaml
