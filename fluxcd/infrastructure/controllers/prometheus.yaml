@@ -29,3 +29,7 @@ spec:
         name: prometheus
         namespace: prom-system
       interval: 12h
+  values:
+    server:
+      service:
+        annotations:
