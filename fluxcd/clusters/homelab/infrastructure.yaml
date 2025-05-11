@@ -24,6 +24,18 @@ spec:
         kind: HelmRelease
         name: ingress-nginx
         namespace: ingress-nginx
+    - patch: |
+        - op: add
+          path: /spec/values/server/service/annotations
+          value: 
+            metallb.io/loadBalancerIP: 192.168.2.151
+        - op: add
+          path: /spec/values/server/service/type
+          value: LoadBalancer
+      target:
+        kind: HelmRelease
+        name: prometheus
+        namespace: prom-system
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
