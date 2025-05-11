@@ -41,8 +41,8 @@ resource "proxmox_virtual_environment_vm" "talos_node" {
 
   cpu {
     cores = each.value.cores
-    type  = "x86-64-v2-AES" # recommended for modern CPUs
-    units = null
+    type  = "host" # recommended for modern CPUs
+    units = 1024
   }
 
   memory {
