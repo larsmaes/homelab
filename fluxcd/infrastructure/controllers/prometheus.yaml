@@ -32,6 +32,9 @@ spec:
   values:
     podSecurityPolicy:
       enabled: true
+    prometheus-node-exporter:
+      rbac:
+        pspEnabled: true
     server:
       service:
         annotations:
