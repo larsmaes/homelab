@@ -30,6 +30,8 @@ spec:
         namespace: prom-system
       interval: 12h
   values:
+    podSecurityPolicy:
+      enabled: true
     server:
       service:
         annotations:
