@@ -1,33 +1,79 @@
----
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: authentik
+    name: authentik
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: authentik
-  namespace: authentik
+    name: authentik
+    namespace: authentik
 spec:
-  interval: 24h
-  url: https://charts.goauthentik.io
+    interval: 24h
+    url: https://charts.goauthentik.io
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: authentik
-  namespace: authentik
+    name: authentik
+    namespace: authentik
 spec:
-  interval: 30m
-  chart:
-    spec:
-      chart: authentik
-      version: "*"
-      sourceRef:
-        kind: HelmRepository
-        name: authentik
-        namespace: authentik
-      interval: 12h
-  values:
-    
+    interval: 30m
+    chart:
+        spec:
+            chart: authentik
+            version: '*'
+            sourceRef:
+                kind: HelmRepository
+                name: authentik
+                namespace: authentik
+            interval: 12h
+    values:
+        authentik:
+            secret_key: ENC[AES256_GCM,data:Oqbe5zk1f36EhBQZmedZv/y9pJM8oQe5,iv:l4D+bL0zUfbK8c/d2BAfhvIISLyg81zSDug4/x60kcM=,tag:Hva4Hk2uftvsqqUNn//BrA==,type:str]
+            # This sends anonymous usage-data, stack traces on errors and
+            # performance data to sentry.io, and is fully opt-in
+            error_reporting:
+                enabled: true
+            postgresql:
+                password: ENC[AES256_GCM,data:NGgwBMKOntefkzj1dZNSFdmGzEAdQfuf,iv:Ziy2iU/bUJLTnyLCGAukz3FKG43/kzkZjA9iqb2AxnQ=,tag:jGtz/OE/SasZ+B6TlZFh4Q==,type:str]
+        server:
+            ingress:
+                # Specify kubernetes ingress controller class name
+                ingressClassName: nginx | traefik | kong
+                enabled: true
+                hosts:
+                    - authentik.domain.tld
+        postgresql:
+            enabled: true
+            auth:
+                password: ENC[AES256_GCM,data:ujiYt8LeldrKA8xWshgPpNf2dUFBKO45,iv:UnWEqWP1wr6/wGI54AXHPWCFTm54Mc+qb2RSD/Ua6KY=,tag:nEaf56UVK/zLqBIIZ5at1Q==,type:str]
+        redis:
+            enabled: true
+sops:
+    lastmodified: "2025-06-02T14:06:40Z"
+    mac: ENC[AES256_GCM,data:dIMXEKsVn77QoaYGDPPChs6Vzm5Mi1VwkZNQ+pi5AuSSfBf8NsOGmmoiGq4aHiHo0CbfrSA+xgJmiuGZJojFkLobkF7GJ0GkJOnYjQPbdt+pf78cYY25tcrXkTjppG+KfO/KZlLB2rystYo8I8K8KBVkb+NoZ1iXcY2g1FHvGok=,iv:z37G4YTHDFtVB2cZwcuZZwYc1UZ4vlko023DYXRA6zc=,tag:twcgoA5tBMBLkPpu/jEM2A==,type:str]
+    pgp:
+        - created_at: "2025-06-02T14:06:40Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/P7AIDbIcemAQ//TuZQwwn/ftEX8dsMHzk8iYcvE6URvQm9hNXDi5nwbW7k
+            XMrcS4dOkzqcYQOvOcMGrOYgJ8tiKEkQ9DSWGqMtMbo7M41vlzn9DJN5lTaTZgyW
+            TpCnPfXVv+jqutKfDPoJZm3+Tm532xoOP0YAYm/4+x86EIMH7pnxsrc005zK1Qbx
+            2T8r5d757WZCYkR4nPU0PBa0vv74NSwwvV4/cbQmf5wQQ5SYO2z+8wz90w6dfG9Q
+            yqdx0fEPCLQN6HBar4cQ7/W7H2epii+7KfIXT/e9ZVi0QzoeMvHCgO6/8r3gNCEf
+            a0Ta+jBKUOkMWdQj6ChUvvDDmV9Plr7S5gnDoFPCan4RMrqvwPI483tMNG/aSD40
+            O8P6Munx5ORDhgDlYT3m6BhtGmxhF5nHsRYPyswwHnqYdTqNxwqtwTfyPPf6K3hm
+            rD+S/0gMhpgRfkroPF+umpHvn9EWuRemVF2Nfps+EPCUsY2ypUiLPX7Z0aHLvHtI
+            NVhtVyPcjFm3CZcgz3XFpi72xqhTdw8MeLb0prHrJ5jRkgyDqs3/1eUbDScgQrYT
+            PBR6MEX2G/Cg9hdIDUmFtsXyELhfNT4eksZ+oOyTPho58mR7u8Bk5/T5VlvdfhX6
+            GZ8iffvwLnJt0URrW7l1yfgJCX5t7KRIb+jXHxSQrAWE8c0HRZiMi6SPJ+jKxbzU
+            aAEJAhCoO4pQVi3C3eToKKntuLrwQ0ig/a+pMeXrjDDJO7uSUHvgwAdt5nmQaQWy
+            F8/2NVVcOzalbii0y8NrB8ytwcmvaL7NI8ydAXQzvsw2snQlgqoijLtkOyJBTmZQ
+            HHgVl4h4xOUP
+            =c3JF
+            -----END PGP MESSAGE-----
+          fp: 4C326804A70D9B1CEE3BE7FF86B6633E490029BB
+    encrypted_regex: secret_key|password
+    version: 3.10.2
