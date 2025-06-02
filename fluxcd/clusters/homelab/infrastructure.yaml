@@ -19,7 +19,7 @@ spec:
         - op: add
           path: /spec/values/controller/service/annotations
           value: 
-            metallb.io/loadBalancerIP: 192.168.2.150
+            metallb.io/loadBalancerIPs: 192.168.2.150
       target:
         kind: HelmRelease
         name: ingress-nginx
@@ -28,7 +28,7 @@ spec:
         - op: add
           path: /spec/values/server/service/annotations
           value: 
-            metallb.io/loadBalancerIP: 192.168.2.151
+            metallb.io/loadBalancerIPs: 192.168.2.151
         - op: add
           path: /spec/values/server/service/type
           value: LoadBalancer
