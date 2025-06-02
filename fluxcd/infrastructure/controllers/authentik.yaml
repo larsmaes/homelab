@@ -40,10 +40,10 @@ spec:
         server:
             ingress:
                 # Specify kubernetes ingress controller class name
-                ingressClassName: nginx | traefik | kong
+                ingressClassName: nginx
                 enabled: true
                 hosts:
-                    - authentik.domain.tld
+                    - auth.homelab.larsmaes.nl
         postgresql:
             enabled: true
             auth:
