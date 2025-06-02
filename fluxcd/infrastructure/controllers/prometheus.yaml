@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: prom-system
+  labels:
+     pod-security.kubernetes.io/enforce: privileged
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
@@ -30,6 +32,11 @@ spec:
         namespace: prom-system
       interval: 12h
   values:
+    podSecurityPolicy:
+      enabled: true
+    prometheus-node-exporter:
+      rbac:
+        pspEnabled: true
     server:
       service:
         annotations:
