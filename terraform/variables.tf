@@ -82,3 +82,9 @@ variable "github_repository_url" {
   description = "GitHub repository URL for FluxCD"
   type        = string
 }
+
+variable "sops_gpg_key_file" {
+  description = "SOPS GPG key file"
+  type        = string
+  sensitive   = true  
+}

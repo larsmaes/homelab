@@ -21,6 +21,7 @@ data "talos_machine_configuration" "controlplane" {
       fluxcd_repo_secret = templatefile("${path.module}/manifests/fluxcd/secret.yaml.tmpl", {
         private_key = file("${path.module}/${var.github_private_key_file}")
         public_key  = file("${path.module}/${var.github_public_key_file}")
+        sops_gpg = file("${path.module}/${var.sops_gpg_key_file}")
       })
       fluxcd_repo = templatefile("${path.module}/manifests/fluxcd/repository.yaml.tmpl", {
         github_repository_url = var.github_repository_url
