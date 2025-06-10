@@ -26,3 +26,11 @@ spec:
   sourceRef:
     kind: OCIRepository
     name: capacitor
+  patches:
+    - target:
+        kind: Service
+      patch: |
+        - op: replace
+          path: /spec/type
+          value: LoadBalancer
+      
