@@ -88,3 +88,9 @@ variable "sops_gpg_key_file" {
   type        = string
   sensitive   = true  
 }
+
+variable "ghrc_registry_auth" {
+  description = "Registry authentication for ghrc.io"
+  type        = string
+  sensitive   = true
+}

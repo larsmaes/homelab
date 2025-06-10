@@ -27,6 +27,7 @@ data "talos_machine_configuration" "controlplane" {
         github_repository_url = var.github_repository_url
       })
       fluxcd_sync = file("${path.module}/manifests/fluxcd/gotk-sync.yaml")
+      ghrc_registry_auth = var.registry_ghrc_io_auth
     }),
   ]
 }
@@ -64,6 +65,7 @@ resource "talos_machine_configuration_apply" "worker" {
       install_disk   = each.value.install_disk
       talos_version  = var.talos_version
       talos_image_id = local.talos_image_id
+      ghrc_registry_auth = var.ghrc_registry_auth
     })
   ]
 }

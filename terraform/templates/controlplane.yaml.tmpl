@@ -4,6 +4,14 @@ machine:
     image: factory.talos.dev/installer/${talos_image_id}:${talos_version}
   network:
     hostname: ${hostname}
+  registries:
+    config:
+      ghcr.io:
+        auth: 
+          auth: ${ghrc_registry_auth}
+  kubelet:
+    extraArgs:
+      rotate-server-certificates: true
 cluster:
   allowSchedulingOnControlPlanes: true
   inlineManifests:
