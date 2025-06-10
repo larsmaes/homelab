@@ -8,3 +8,4 @@ resources:
   - prometheus.yaml
   # - authentik.yaml
   - capacitor.yaml
+  - metricsserver.yaml
