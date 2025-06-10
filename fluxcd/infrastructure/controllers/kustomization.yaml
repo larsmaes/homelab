@@ -6,4 +6,4 @@ resources:
   - cert-manager.yaml
   - csi-driver-nfs.yaml
   - prometheus.yaml
-  - authentik.yaml
+  # - authentik.yaml
