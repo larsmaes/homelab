@@ -27,7 +27,7 @@ data "talos_machine_configuration" "controlplane" {
         github_repository_url = var.github_repository_url
       })
       fluxcd_sync = file("${path.module}/manifests/fluxcd/gotk-sync.yaml")
-      ghrc_registry_auth = var.registry_ghrc_io_auth
+      ghrc_registry_auth = var.ghrc_registry_auth
     }),
   ]
 }
