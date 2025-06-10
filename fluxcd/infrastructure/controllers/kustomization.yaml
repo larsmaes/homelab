@@ -7,3 +7,4 @@ resources:
   - csi-driver-nfs.yaml
   - prometheus.yaml
   # - authentik.yaml
+  - capacitor.yaml
