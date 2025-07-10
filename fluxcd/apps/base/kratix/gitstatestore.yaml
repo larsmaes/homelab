@@ -1,25 +1,89 @@
 apiVersion: platform.kratix.io/v1alpha1
 kind: GitStateStore
 metadata:
-  name: default
+    name: default
+    namespace: kratix-system
 spec:
-  # The branch to write to: optional, defaults to main
-  branch: main
-  # The top-level path in the git repository to write to: optional
-  path: destinations/
-  # Valid options: basicAuth, and ssh; defaults to basicAuth
-  authMethod: basicAuth
-  # Optional
-  gitAuthor:
-    # The name of the author to use when committing: optional, defaults to kratix
-    name: kratix
-    # The email of the author to use when committing: optional, defaults to empty
-    email: ""
-  # Required
-  secretRef:
-    # The name and namespace of the secret to use to authenticate: required
+    # The branch to write to: optional, defaults to main
+    branch: main
+    # The top-level path in the git repository to write to: optional
+    path: destinations/
+    # Valid options: basicAuth, and ssh; defaults to basicAuth
+    authMethod: basicAuth
+    # Optional
+    gitAuthor:
+        # The name of the author to use when committing: optional, defaults to kratix
+        name: kratix
+        # The email of the author to use when committing: optional, defaults to empty
+        email: ""
+    # Required
+    secretRef:
+        # The name and namespace of the secret to use to authenticate: required
+        name: github-credentials
+        namespace: kratix-system
+    # The address of the git repository. If auth method is basic auth, use `http`/`https` format: required
+    # if your using ssh auth then ensure its of the format git@github.com:<org>/<repo>.git
+    url: https://github.com/larsmaes/kratix
+sops:
+    lastmodified: "2025-07-10T11:36:27Z"
+    mac: ENC[AES256_GCM,data:c3yJufqMJ+f1EfVajd1fOxr/I/L0osP8DPK14McPyAMXs8lbamjyCWLGbCf53dMseWas5SW9s7XOAM6mhgf5xYihTPCuagtf9wyK9bG2L1obPyvXDtvSd+aSZzIV8ulVgzLB6GWHsvmtpNUUB7tbGsO74LDP/MJYWN4GGl6LBvU=,iv:6lLpXeVV+S26wI/ZIswQ6S1SXHzvM/qxxdNmQoqXnfU=,tag:1yjf0bFP1cDKlAmfURA/og==,type:str]
+    pgp:
+        - created_at: "2025-07-10T11:36:27Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/P7AIDbIcemAQ/+N992PFg8lBaCDh4pMKDwt12v/TcmzzU1UI/ueMOAf87O
+            jUwW+hzgobf0Wufhp6+XpfYWXGnxSuGBLRx9e3U6qAWVNByJgMymhXrdfLC6tVNr
+            GrevEV0b8QMprO8Olfyog2y5ic2BKR3r0OQ6AElknK5wgxFeJUq9hGpyD3mrwbe/
+            lZv/g90CA/6GmTZY4WMZv20kFEvlhM85960On+lf9gO6/EHL/kEo2LINJK7/oydU
+            tlo6bdoW90Opig4c/Q6o9Am6GFBdZLzbJ/JhUKpT0uWzPrYdg35tTUgj4N7JuScq
+            pn2s5UbOeYACamYmPv7bDlzHSYZOleAPg0C7fva403/6PWZGSRwJ7lULrsSa2ApY
+            LrGm94KszTwwNLAUHjaxBFT9h1YpInX4TnBAXKXXTM8r2eITJeWHZ51Sm+NDK/c6
+            KcV6PSLmlgxiT6qUYJfKjDCXkbChGK9SX4xR6M928aWEBvy0MNpU7vcUSKjBYhQu
+            /iHALQbhUDm8vmzB24a+j/LdTUUUCe8gXZfTmZcjFXvE9AKOASD9GPm81PS4EDiG
+            +GfIwiEmvzbxVXeg58ZHcgv12UxE9Mkry3WsiIUUD5AFML9/Pf4hGvledfLPFU9w
+            XLXzTM5uwCcp6UkFFjfX+PqzEQ2XXBiESeREAMDw7TEdLd00PT6VPZlylvzumSbU
+            aAEJAhBDEMXvT2eASb7hY64ciui97xrKtGjnaoq35f0LNW56EbwfD87isJv7qDkt
+            ieDMGmPyL8+J+sJna49XfG6cxRXxtMAjnoRMCdrJ0FhcpdJ7Ox8FhWTqk4I+xwkW
+            8sYZsXdOZibE
+            =Em8j
+            -----END PGP MESSAGE-----
+          fp: 4C326804A70D9B1CEE3BE7FF86B6633E490029BB
+    encrypted_regex: password
+    version: 3.10.2
+---
+apiVersion: v1
+kind: Secret
+metadata:
     name: github-credentials
-    namespace: default
-  # The address of the git repository. If auth method is basic auth, use `http`/`https` format: required
-  # if your using ssh auth then ensure its of the format git@github.com:<org>/<repo>.git
-  url: https://github.com/larsmaes/kratix
+type: Opaque
+data:
+    username: bGFyc21hZXM=
+    password: ENC[AES256_GCM,data:NnGgoc2YTZIxDqLpRP2A9REaJpHYBYsRhI9ZyXRz/90P0lYnbA7qDRu9Jg/0obBDZKUhph84tyQ=,iv:TPji3wiiFxzVVDAzuFevCT0D5g1xaV9673/fLpxpe9k=,tag:rs4yTSJ1E9Uv3FlntEW/mA==,type:str]
+sops:
+    lastmodified: "2025-07-10T11:36:27Z"
+    mac: ENC[AES256_GCM,data:c3yJufqMJ+f1EfVajd1fOxr/I/L0osP8DPK14McPyAMXs8lbamjyCWLGbCf53dMseWas5SW9s7XOAM6mhgf5xYihTPCuagtf9wyK9bG2L1obPyvXDtvSd+aSZzIV8ulVgzLB6GWHsvmtpNUUB7tbGsO74LDP/MJYWN4GGl6LBvU=,iv:6lLpXeVV+S26wI/ZIswQ6S1SXHzvM/qxxdNmQoqXnfU=,tag:1yjf0bFP1cDKlAmfURA/og==,type:str]
+    pgp:
+        - created_at: "2025-07-10T11:36:27Z"
+          enc: |-
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA/P7AIDbIcemAQ/+N992PFg8lBaCDh4pMKDwt12v/TcmzzU1UI/ueMOAf87O
+            jUwW+hzgobf0Wufhp6+XpfYWXGnxSuGBLRx9e3U6qAWVNByJgMymhXrdfLC6tVNr
+            GrevEV0b8QMprO8Olfyog2y5ic2BKR3r0OQ6AElknK5wgxFeJUq9hGpyD3mrwbe/
+            lZv/g90CA/6GmTZY4WMZv20kFEvlhM85960On+lf9gO6/EHL/kEo2LINJK7/oydU
+            tlo6bdoW90Opig4c/Q6o9Am6GFBdZLzbJ/JhUKpT0uWzPrYdg35tTUgj4N7JuScq
+            pn2s5UbOeYACamYmPv7bDlzHSYZOleAPg0C7fva403/6PWZGSRwJ7lULrsSa2ApY
+            LrGm94KszTwwNLAUHjaxBFT9h1YpInX4TnBAXKXXTM8r2eITJeWHZ51Sm+NDK/c6
+            KcV6PSLmlgxiT6qUYJfKjDCXkbChGK9SX4xR6M928aWEBvy0MNpU7vcUSKjBYhQu
+            /iHALQbhUDm8vmzB24a+j/LdTUUUCe8gXZfTmZcjFXvE9AKOASD9GPm81PS4EDiG
+            +GfIwiEmvzbxVXeg58ZHcgv12UxE9Mkry3WsiIUUD5AFML9/Pf4hGvledfLPFU9w
+            XLXzTM5uwCcp6UkFFjfX+PqzEQ2XXBiESeREAMDw7TEdLd00PT6VPZlylvzumSbU
+            aAEJAhBDEMXvT2eASb7hY64ciui97xrKtGjnaoq35f0LNW56EbwfD87isJv7qDkt
+            ieDMGmPyL8+J+sJna49XfG6cxRXxtMAjnoRMCdrJ0FhcpdJ7Ox8FhWTqk4I+xwkW
+            8sYZsXdOZibE
+            =Em8j
+            -----END PGP MESSAGE-----
+          fp: 4C326804A70D9B1CEE3BE7FF86B6633E490029BB
+    encrypted_regex: password
+    version: 3.10.2
