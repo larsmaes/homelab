@@ -1,0 +1,25 @@
+apiVersion: platform.kratix.io/v1alpha1
+kind: GitStateStore
+metadata:
+  name: default
+spec:
+  # The branch to write to: optional, defaults to main
+  branch: main
+  # The top-level path in the git repository to write to: optional
+  path: destinations/
+  # Valid options: basicAuth, and ssh; defaults to basicAuth
+  authMethod: basicAuth
+  # Optional
+  gitAuthor:
+    # The name of the author to use when committing: optional, defaults to kratix
+    name: kratix
+    # The email of the author to use when committing: optional, defaults to empty
+    email:
+  # Required
+  secretRef:
+    # The name and namespace of the secret to use to authenticate: required
+    name: github-credentials
+    namespace: default
+  # The address of the git repository. If auth method is basic auth, use `http`/`https` format: required
+  # if your using ssh auth then ensure its of the format git@github.com:<org>/<repo>.git
+  url: https://github.com/larsmaes/kratix
