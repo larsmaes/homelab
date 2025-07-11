@@ -6,5 +6,5 @@ resources:
   - https://github.com/syntasso/kratix/releases/download/latest/kratix.yaml
   - gitstatestore.yaml
   - destinations.yaml
-  - jenkins-promise.yaml
-  - jenkins-resource.yaml
+  # - jenkins-promise.yaml
+  # - jenkins-resource.yaml
