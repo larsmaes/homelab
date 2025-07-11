@@ -7,3 +7,4 @@ resources:
   - gitstatestore.yaml
   - destinations.yaml
   - jenkins-promise.yaml
+  - jenkins-resource.yaml
