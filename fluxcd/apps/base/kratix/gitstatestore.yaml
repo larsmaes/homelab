@@ -23,7 +23,7 @@ spec:
         namespace: kratix-platform-system
     # The address of the git repository. If auth method is basic auth, use `http`/`https` format: required
     # if your using ssh auth then ensure its of the format git@github.com:<org>/<repo>.git
-    url: https://github.com/larsmaes/kratix
+    url: git@github.com:larsmaes/kratix.git
 sops:
     lastmodified: "2025-07-11T07:38:12Z"
     mac: ENC[AES256_GCM,data:VwJ3SUC9FTCKyiCvOfSaSwLAjdM11bxAZQucTkxDpiEt0mkGVDwYnA6Q2JDLQmLwkeGZidQ0+X3gpCBu1qnn/RGtBgomDG7dmUEiS3Abu1H42eXh0sgHfUVr61J1SiCP7f9ZWATTi5lSGbh8NVCQC49o9WNLchc+OmvC3fdfEgo=,iv:+xGBBImblykQqbE6jIO/VRWq+FHNayS8gNX1VB7aUA4=,tag:WC0QbFxlfSS5zjFhuW0mVQ==,type:str]
