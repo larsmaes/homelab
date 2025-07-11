@@ -9,7 +9,7 @@ spec:
     # The top-level path in the git repository to write to: optional
     path: destinations/
     # Valid options: basicAuth, and ssh; defaults to basicAuth
-    authMethod: basicAuth
+    authMethod: ssh
     # Optional
     gitAuthor:
         # The name of the author to use when committing: optional, defaults to kratix
@@ -25,31 +25,31 @@ spec:
     # if your using ssh auth then ensure its of the format git@github.com:<org>/<repo>.git
     url: https://github.com/larsmaes/kratix
 sops:
-    lastmodified: "2025-07-10T11:36:27Z"
-    mac: ENC[AES256_GCM,data:c3yJufqMJ+f1EfVajd1fOxr/I/L0osP8DPK14McPyAMXs8lbamjyCWLGbCf53dMseWas5SW9s7XOAM6mhgf5xYihTPCuagtf9wyK9bG2L1obPyvXDtvSd+aSZzIV8ulVgzLB6GWHsvmtpNUUB7tbGsO74LDP/MJYWN4GGl6LBvU=,iv:6lLpXeVV+S26wI/ZIswQ6S1SXHzvM/qxxdNmQoqXnfU=,tag:1yjf0bFP1cDKlAmfURA/og==,type:str]
+    lastmodified: "2025-07-11T07:38:12Z"
+    mac: ENC[AES256_GCM,data:VwJ3SUC9FTCKyiCvOfSaSwLAjdM11bxAZQucTkxDpiEt0mkGVDwYnA6Q2JDLQmLwkeGZidQ0+X3gpCBu1qnn/RGtBgomDG7dmUEiS3Abu1H42eXh0sgHfUVr61J1SiCP7f9ZWATTi5lSGbh8NVCQC49o9WNLchc+OmvC3fdfEgo=,iv:+xGBBImblykQqbE6jIO/VRWq+FHNayS8gNX1VB7aUA4=,tag:WC0QbFxlfSS5zjFhuW0mVQ==,type:str]
     pgp:
-        - created_at: "2025-07-10T11:36:27Z"
+        - created_at: "2025-07-11T07:38:12Z"
           enc: |-
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA/P7AIDbIcemAQ/+N992PFg8lBaCDh4pMKDwt12v/TcmzzU1UI/ueMOAf87O
-            jUwW+hzgobf0Wufhp6+XpfYWXGnxSuGBLRx9e3U6qAWVNByJgMymhXrdfLC6tVNr
-            GrevEV0b8QMprO8Olfyog2y5ic2BKR3r0OQ6AElknK5wgxFeJUq9hGpyD3mrwbe/
-            lZv/g90CA/6GmTZY4WMZv20kFEvlhM85960On+lf9gO6/EHL/kEo2LINJK7/oydU
-            tlo6bdoW90Opig4c/Q6o9Am6GFBdZLzbJ/JhUKpT0uWzPrYdg35tTUgj4N7JuScq
-            pn2s5UbOeYACamYmPv7bDlzHSYZOleAPg0C7fva403/6PWZGSRwJ7lULrsSa2ApY
-            LrGm94KszTwwNLAUHjaxBFT9h1YpInX4TnBAXKXXTM8r2eITJeWHZ51Sm+NDK/c6
-            KcV6PSLmlgxiT6qUYJfKjDCXkbChGK9SX4xR6M928aWEBvy0MNpU7vcUSKjBYhQu
-            /iHALQbhUDm8vmzB24a+j/LdTUUUCe8gXZfTmZcjFXvE9AKOASD9GPm81PS4EDiG
-            +GfIwiEmvzbxVXeg58ZHcgv12UxE9Mkry3WsiIUUD5AFML9/Pf4hGvledfLPFU9w
-            XLXzTM5uwCcp6UkFFjfX+PqzEQ2XXBiESeREAMDw7TEdLd00PT6VPZlylvzumSbU
-            aAEJAhBDEMXvT2eASb7hY64ciui97xrKtGjnaoq35f0LNW56EbwfD87isJv7qDkt
-            ieDMGmPyL8+J+sJna49XfG6cxRXxtMAjnoRMCdrJ0FhcpdJ7Ox8FhWTqk4I+xwkW
-            8sYZsXdOZibE
-            =Em8j
+            hQIMA/P7AIDbIcemAQ/+Odvh9Ns1WdUZ8nQuEyEj8iiRT3Z5dGT+6Lx3Q+yXlihN
+            /XGltTBbxv1Ts8C7cAj7DMdxQg+Jed7oulTsV8HBJ6DM2q/CWAtiOaMRHR10gBz1
+            f3Xke9wgxPjFNAT5xiXNMUeUlKtpbxctJVYKBDil6nb7OKNoEk5n8if+gHrlbZf1
+            fiyBI3Jg5ZywRtx+g4XypoouqBh+kZdFYeDwaro4rgMM5/j1IGwKntGgjAOyV5gR
+            BAxBFKxl8hZsPsfYwuuRQqpsejXQi5rS9gLKQlTO2lcLF9+Ko4KD2+5iBwuFe4jX
+            8/z3OoOLnMVxkH/rsfIiz47+I8gc/LJQTAdCRNjuiPOHn1vIvCi6snPgIcRUtwlp
+            Y3UozuEPsH4d4Hd3Q8wVerXZ6Yi+d45EPJyV6RNP5AFi+4gnuUBxEkGGA6uximfZ
+            UV5z5NaxeKtzpRIPHSJYfAqOAm68zbkuPj7hoVejqkQ6aW1+3m/qYQFF6vqXjj3+
+            YrlUkyUTPW98AnsZTmlwhGHpV9570XwPUe3/RzMrvQLrCEklVOEQPKjVSQpkEY1j
+            fF+sZtSYQCPAP1NFXj1v2KOLyMgVH5GAm2tLM3RpPYs01IMcNLwlQTVihGgnLB3H
+            EEymJ73WYdbIm1dWZY4x9A7l7uJA9UKX5wx31QRcT4JuITAwwt8QiBW7ZzZA3TfU
+            aAEJAhBRkTugyafgIkdvvLQX2MsPrAvuN0TjnC4pLYDxuCSiq8u+Mx3y4XbN8ERE
+            XBAMPmr5arf0NAlIrIqwoY7MuiJf/D3yyVbjZC1TuMvBoCPBcoquvy3N5rGyDsXZ
+            tVxddXQILBiR
+            =+dxn
             -----END PGP MESSAGE-----
           fp: 4C326804A70D9B1CEE3BE7FF86B6633E490029BB
-    encrypted_regex: password
+    encrypted_regex: sshPrivateKey
     version: 3.10.2
 ---
 apiVersion: v1
@@ -59,32 +59,47 @@ metadata:
     namespace: kratix-platform-system
 type: Opaque
 data:
-    username: bGFyc21hZXM=
-    password: ENC[AES256_GCM,data:NnGgoc2YTZIxDqLpRP2A9REaJpHYBYsRhI9ZyXRz/90P0lYnbA7qDRu9Jg/0obBDZKUhph84tyQ=,iv:TPji3wiiFxzVVDAzuFevCT0D5g1xaV9673/fLpxpe9k=,tag:rs4yTSJ1E9Uv3FlntEW/mA==,type:str]
+    sshPrivateKey: ENC[AES256_GCM,data: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,iv:cLIfzujL0PL+2p+wAx7rPzhCwwogjXQxZGPm0OG3x2I=,tag:yC2dzT5WqXJWmv2F7/gF7Q==,type:str]
+    knownHosts: |
+        Z2l0aHViLmNvbSBzc2gtZWQyNTUxOSBBQUFBQzNOemFDMWxaREkxTlRFNUFBQUFJT01xcW5rVnpy
+        bTBTZEc2VU9vcUtMc2FiZ0g1Qzlva1dpMGRoMmw5R0tKbApnaXRodWIuY29tIGVjZHNhLXNoYTIt
+        bmlzdHAyNTYgQUFBQUUyVmpaSE5oTFhOb1lUSXRibWx6ZEhBeU5UWUFBQUFJYm1semRIQXlOVFlB
+        QUFCQkJFbUtTRU5qUUVlek9teGtaTXk3b3BLZ3dGQjlua3Q1WVJyWU1qTnVHNU44N3VSZ2c2Q0xy
+        Ym81d0FkVC95NnYwbUtWMFUydzBXWjJZQi8rK1Rwb2NrZz0KZ2l0aHViLmNvbSBzc2gtcnNhIEFB
+        QUFCM056YUMxeWMyRUFBQUFEQVFBQkFBQUJnUUNqN25kTnhRb3dnY1FuanNoY0xycVBFaWlwaG50
+        K1ZUVHZEUDZtSEJMOWoxYU5Va1k0VWUxZ3Z3bkdMVmxPaEdlWXJuWmFNZ1JLNitQS0NVWGFEYkM3
+        cXRiVzhnSWtoTDdhR0NzT3IvQzU2U0pNeS9CQ1pmeGQxbld6QU94U0RQZ1ZzbWVyT0JZZk5xbHRW
+        OS9oV0NxQnl3SU5JUis1ZElnNkpUSjcycGNFcEVqY1lnWGtFMllFRlhWMUpIbnNLZ2JMV05saFNj
+        cWIyVW15UmtReXl0Ukx0TCszOFRHeGt4Q2ZsbU8rNVo4Q1NTTlk3R2lkak1JWjdRNHpNakEybjFu
+        R3JsVERrendEQ3N3K3dxRlBHUUExNzljbmZHV09XUlZydWoxNno2WHl2eHZqSndiejB3UVo3NVhL
+        NXRLU2I3Rk55ZUlFczRUVDRqaytTNGRoUGVBVUM1eStiRFlpcllnTTRHQzd1RW56dG5aeWFWV1E3
+        QjM4MUFLNFFkcnd0NTFacUV4S2JRcFRVTm4rRWpxb1R3dnFOajRrcXg1UVVDSTBUaFMvWWtPeEpD
+        WG1QVVdaYmhqcENnNTZpKzJhQjZDbUsySkdobjU3SzVtajBNTmRCWEE0L1dud0g2WG9QV0p6SzVO
+        eXUyekIzbkFacCtTNWhwUXMrcDF2TjEvd3Nqaz0KCg==
 sops:
-    lastmodified: "2025-07-10T11:36:27Z"
-    mac: ENC[AES256_GCM,data:c3yJufqMJ+f1EfVajd1fOxr/I/L0osP8DPK14McPyAMXs8lbamjyCWLGbCf53dMseWas5SW9s7XOAM6mhgf5xYihTPCuagtf9wyK9bG2L1obPyvXDtvSd+aSZzIV8ulVgzLB6GWHsvmtpNUUB7tbGsO74LDP/MJYWN4GGl6LBvU=,iv:6lLpXeVV+S26wI/ZIswQ6S1SXHzvM/qxxdNmQoqXnfU=,tag:1yjf0bFP1cDKlAmfURA/og==,type:str]
+    lastmodified: "2025-07-11T07:38:12Z"
+    mac: ENC[AES256_GCM,data:VwJ3SUC9FTCKyiCvOfSaSwLAjdM11bxAZQucTkxDpiEt0mkGVDwYnA6Q2JDLQmLwkeGZidQ0+X3gpCBu1qnn/RGtBgomDG7dmUEiS3Abu1H42eXh0sgHfUVr61J1SiCP7f9ZWATTi5lSGbh8NVCQC49o9WNLchc+OmvC3fdfEgo=,iv:+xGBBImblykQqbE6jIO/VRWq+FHNayS8gNX1VB7aUA4=,tag:WC0QbFxlfSS5zjFhuW0mVQ==,type:str]
     pgp:
-        - created_at: "2025-07-10T11:36:27Z"
+        - created_at: "2025-07-11T07:38:12Z"
           enc: |-
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA/P7AIDbIcemAQ/+N992PFg8lBaCDh4pMKDwt12v/TcmzzU1UI/ueMOAf87O
-            jUwW+hzgobf0Wufhp6+XpfYWXGnxSuGBLRx9e3U6qAWVNByJgMymhXrdfLC6tVNr
-            GrevEV0b8QMprO8Olfyog2y5ic2BKR3r0OQ6AElknK5wgxFeJUq9hGpyD3mrwbe/
-            lZv/g90CA/6GmTZY4WMZv20kFEvlhM85960On+lf9gO6/EHL/kEo2LINJK7/oydU
-            tlo6bdoW90Opig4c/Q6o9Am6GFBdZLzbJ/JhUKpT0uWzPrYdg35tTUgj4N7JuScq
-            pn2s5UbOeYACamYmPv7bDlzHSYZOleAPg0C7fva403/6PWZGSRwJ7lULrsSa2ApY
-            LrGm94KszTwwNLAUHjaxBFT9h1YpInX4TnBAXKXXTM8r2eITJeWHZ51Sm+NDK/c6
-            KcV6PSLmlgxiT6qUYJfKjDCXkbChGK9SX4xR6M928aWEBvy0MNpU7vcUSKjBYhQu
-            /iHALQbhUDm8vmzB24a+j/LdTUUUCe8gXZfTmZcjFXvE9AKOASD9GPm81PS4EDiG
-            +GfIwiEmvzbxVXeg58ZHcgv12UxE9Mkry3WsiIUUD5AFML9/Pf4hGvledfLPFU9w
-            XLXzTM5uwCcp6UkFFjfX+PqzEQ2XXBiESeREAMDw7TEdLd00PT6VPZlylvzumSbU
-            aAEJAhBDEMXvT2eASb7hY64ciui97xrKtGjnaoq35f0LNW56EbwfD87isJv7qDkt
-            ieDMGmPyL8+J+sJna49XfG6cxRXxtMAjnoRMCdrJ0FhcpdJ7Ox8FhWTqk4I+xwkW
-            8sYZsXdOZibE
-            =Em8j
+            hQIMA/P7AIDbIcemAQ/+Odvh9Ns1WdUZ8nQuEyEj8iiRT3Z5dGT+6Lx3Q+yXlihN
+            /XGltTBbxv1Ts8C7cAj7DMdxQg+Jed7oulTsV8HBJ6DM2q/CWAtiOaMRHR10gBz1
+            f3Xke9wgxPjFNAT5xiXNMUeUlKtpbxctJVYKBDil6nb7OKNoEk5n8if+gHrlbZf1
+            fiyBI3Jg5ZywRtx+g4XypoouqBh+kZdFYeDwaro4rgMM5/j1IGwKntGgjAOyV5gR
+            BAxBFKxl8hZsPsfYwuuRQqpsejXQi5rS9gLKQlTO2lcLF9+Ko4KD2+5iBwuFe4jX
+            8/z3OoOLnMVxkH/rsfIiz47+I8gc/LJQTAdCRNjuiPOHn1vIvCi6snPgIcRUtwlp
+            Y3UozuEPsH4d4Hd3Q8wVerXZ6Yi+d45EPJyV6RNP5AFi+4gnuUBxEkGGA6uximfZ
+            UV5z5NaxeKtzpRIPHSJYfAqOAm68zbkuPj7hoVejqkQ6aW1+3m/qYQFF6vqXjj3+
+            YrlUkyUTPW98AnsZTmlwhGHpV9570XwPUe3/RzMrvQLrCEklVOEQPKjVSQpkEY1j
+            fF+sZtSYQCPAP1NFXj1v2KOLyMgVH5GAm2tLM3RpPYs01IMcNLwlQTVihGgnLB3H
+            EEymJ73WYdbIm1dWZY4x9A7l7uJA9UKX5wx31QRcT4JuITAwwt8QiBW7ZzZA3TfU
+            aAEJAhBRkTugyafgIkdvvLQX2MsPrAvuN0TjnC4pLYDxuCSiq8u+Mx3y4XbN8ERE
+            XBAMPmr5arf0NAlIrIqwoY7MuiJf/D3yyVbjZC1TuMvBoCPBcoquvy3N5rGyDsXZ
+            tVxddXQILBiR
+            =+dxn
             -----END PGP MESSAGE-----
           fp: 4C326804A70D9B1CEE3BE7FF86B6633E490029BB
-    encrypted_regex: password
+    encrypted_regex: sshPrivateKey
     version: 3.10.2
