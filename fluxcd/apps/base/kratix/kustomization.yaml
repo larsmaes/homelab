@@ -5,3 +5,4 @@ metadata:
 resources:
   - https://github.com/syntasso/kratix/releases/download/latest/kratix.yaml
   - gitstatestore.yaml
+  - destinations.yaml
