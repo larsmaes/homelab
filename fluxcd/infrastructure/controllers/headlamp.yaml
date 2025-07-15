@@ -21,7 +21,7 @@ spec:
     interval: 30m
     chart:
         spec:
-            chart: headlamp/headlamp
+            chart: headlamp
             version: '*'
             sourceRef:
                 kind: HelmRepository
