@@ -30,6 +30,8 @@ spec:
                 namespace: headlamp
             interval: 12h
     values:
+      config:
+        watchPlugins: true
       service:
         type: LoadBalancer
       pluginsManager:
