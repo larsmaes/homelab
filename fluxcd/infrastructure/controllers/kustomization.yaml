@@ -9,3 +9,4 @@ resources:
   # - authentik.yaml
   - capacitor.yaml
   - metricsserver.yaml
+  - headlamp.yaml
