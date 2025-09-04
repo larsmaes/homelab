@@ -43,7 +43,7 @@ spec:
       features {}
     }
   credentials:
-    - filename: opentofu.tfvars.json
+    - filename: opentofu.auto.tfvars.json
       secretRef:
         key: credentials
         name: opentofu-azure-creds
