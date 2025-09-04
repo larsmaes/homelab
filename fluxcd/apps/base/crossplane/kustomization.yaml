@@ -7,3 +7,4 @@ resources:
   - release.yaml
   - provider-opentofu.yaml
   - azure-providerconfig.yaml
+  - opentofu-credentials.yaml
