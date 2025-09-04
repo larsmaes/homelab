@@ -13,3 +13,5 @@ spec:
         name      = "rg-crossplane-test"
         location  = "westeurope"
       }
+  providerConfigRef:
+    name: azure-westeurope
