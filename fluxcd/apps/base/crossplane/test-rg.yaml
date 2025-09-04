@@ -9,9 +9,17 @@ spec:
     # main.tf as opaque, inline HCL.
     source: Inline
     module: |
+
+      resource "random_id" "rg" {
+        byte_length = 4
+      }
+
       resource "azurerm_resource_group" "rg" {
-        name      = "rg-crossplane-test"
+        name      = "rg-crossplane-test-${random_id.rg.hex}"
         location  = "westeurope"
+        tags = {
+          managed-by = "crossplane"
+        }
       }
   providerConfigRef:
     name: azure-westeurope
