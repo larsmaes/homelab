@@ -1,0 +1,15 @@
+apiVersion: opentofu.upbound.io/v1beta1
+kind: Workspace
+metadata:
+  name: example-rg
+spec:
+  forProvider:
+    # Workspaces default to using a remote source - like workspace-remote.yaml.
+    # For simple cases you can use an inline source to specify the content of
+    # main.tf as opaque, inline HCL.
+    source: Inline
+    module: |
+      resource "azurerm_resource_group" "rg" {
+        name      = "rg-crossplane-test"
+        location  = "westeurope"
+      }

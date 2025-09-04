@@ -8,3 +8,4 @@ resources:
   - provider-opentofu.yaml
   - azure-providerconfig.yaml
   - opentofu-credentials.yaml
+  - test-rg.yaml
