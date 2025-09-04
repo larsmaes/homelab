@@ -46,6 +46,6 @@ spec:
     - filename: opentofu.tfvars.json
       secretRef:
         key: credentials
-        name: azure-creds
+        name: opentofu-azure-creds
         namespace: crossplane-system
       source: Secret
