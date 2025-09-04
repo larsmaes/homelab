@@ -13,7 +13,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: crossplane-stable
-        namespace: crossplane
+        namespace: crossplane-system
       interval: 12h
   values:
     crds:
