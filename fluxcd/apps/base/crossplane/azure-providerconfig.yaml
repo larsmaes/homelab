@@ -1,0 +1,51 @@
+apiVersion: opentofu.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: azure-westeurope
+spec:
+  configuration: |
+    terraform {
+      required_providers {
+        azurerm = {
+          source = "hashicorp/azurerm"
+          version = "4.42.0"
+        }
+      }
+      
+      backend "kubernetes" {
+        secret_suffix     = "providerconfig-azure-westeurope"
+        namespace         = "crossplane-system"
+        in_cluster_config = true
+      }
+    }
+
+    variable "subscriptionId" {
+      type = string
+    }
+
+    variable "tenantId" {
+      type = string
+    }
+
+    variable "clientId" {
+      type = string
+    }
+
+    variable "clientSecret" {
+      type = string
+    }
+
+    provider "azurerm" {
+      subscription_id = var.subscriptionId
+      tenant_id = var.tenantId
+      client_id = var.clientId
+      client_secret = var.clientSecret
+      features {}
+    }
+  credentials:
+    - filename: opentofu.tfvars.json
+      secretRef:
+        key: credentials
+        name: azure-creds
+        namespace: crossplane-system
+      source: Secret

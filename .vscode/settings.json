@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1@namespace+v1@serviceaccount+rbac.authorization.k8s.io/v1@clusterrolebinding": "file:///home/lars/test/homelab/fluxcd/infrastructure/controllers/headlamp.yaml"
+    }
+}
