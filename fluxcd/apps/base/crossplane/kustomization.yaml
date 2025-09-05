@@ -12,3 +12,4 @@ resources:
   - example-app-cord.yaml
   - function-patch-and-transform.yaml
   - example-app-composition.yaml
+  - app.yaml
