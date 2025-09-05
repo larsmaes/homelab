@@ -10,3 +10,4 @@ resources:
   - opentofu-credentials.yaml
   - test-rg.yaml
   - example-app.yaml
+  - function-patch-and-transform.yaml
