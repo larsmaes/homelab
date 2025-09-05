@@ -9,5 +9,6 @@ resources:
   - azure-providerconfig.yaml
   - opentofu-credentials.yaml
   - test-rg.yaml
-  - example-app.yaml
+  - example-app-cord.yaml
   - function-patch-and-transform.yaml
+  - example-app-composition.yaml
