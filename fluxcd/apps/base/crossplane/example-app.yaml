@@ -1,0 +1,32 @@
+apiVersion: apiextensions.crossplane.io/v2
+kind: CompositeResourceDefinition
+metadata:
+  name: apps.example.larsmaes.nl
+spec:
+  scope: Namespaced
+  group: example.larsmaes.nl
+  names:
+    kind: App
+    plural: apps
+  versions:
+  - name: v1
+    served: true
+    referenceable: true
+    schema:
+     openAPIV3Schema:
+       type: object
+       properties:
+        spec:
+          type: object
+          properties:
+            tags:
+              description: Key value of tags
+              type: object
+          required:
+          - tags
+        status:
+          type: object
+          properties:
+            tags:
+              description: The tags.
+              type: object
