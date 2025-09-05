@@ -17,6 +17,8 @@ spec:
       resources:
       - name: resource-group
         base:
+          apiVersion: opentofu.upbound.io/v1beta1
+          kind: Workspace
           metadata:
             name: example-rg
           spec:
