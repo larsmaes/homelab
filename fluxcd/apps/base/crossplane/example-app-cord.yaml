@@ -2,6 +2,7 @@ apiVersion: apiextensions.crossplane.io/v2
 kind: CompositeResourceDefinition
 metadata:
   name: apps.example.larsmaes.nl
+  namespace: crossplane-system
 spec:
   scope: Cluster
   group: example.larsmaes.nl
