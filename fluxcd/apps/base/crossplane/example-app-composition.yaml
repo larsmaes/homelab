@@ -47,8 +47,8 @@ spec:
                   })
                 }
               varmap:
-              - rg_name: "example"
-              - tags: 
+                rg_name: "example"
+                tags: 
                   example.larsmaes.io/managed-by: crossplane
             providerConfigRef:
               name: azure-westeurope
