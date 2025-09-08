@@ -2,6 +2,7 @@ apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
   name: app-yaml
+  namespace: crossplane-system
 spec:
   compositeTypeRef:
     apiVersion: example.larsmaes.nl/v1
