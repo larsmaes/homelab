@@ -67,9 +67,3 @@ spec:
         - type: FromCompositeFieldPath
           fromFieldPath: metadata.name
           toFieldPath: metadata.labels[example.larsmaes.io/app]
-        - type: FromCompositeFieldPath
-          fromFieldPath: metadata.name
-          toFieldPath: spec.selector.matchLabels[example.larsmaes.io/app]
-        - type: FromCompositeFieldPath
-          fromFieldPath: metadata.name
-          toFieldPath: spec.template.metadata.labels[example.larsmaes.io/app]
