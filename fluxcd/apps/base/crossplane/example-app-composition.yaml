@@ -21,7 +21,6 @@ spec:
           kind: Workspace
           metadata:
             name: example-rg
-            namespace: default
           spec:
             forProvider:
               source: Inline
