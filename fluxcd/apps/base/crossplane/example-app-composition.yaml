@@ -46,21 +46,19 @@ spec:
                     managed-by = "crossplane"
                   })
                 }
-              vars:
-              - key: "rg_name"
-                value: "example"
-              - key: "tags"
-                value:
+              varmap:
+              - rg_name: "example"
+              - tags: 
                   example.larsmaes.io/managed-by: crossplane
             providerConfigRef:
               name: azure-westeurope
         patches:
         - type: FromCompositeFieldPath
           fromFieldPath: metadata.name
-          toFieldPath: spec.forProvider.vars[0].value
+          toFieldPath: spec.forProvider.vars[rg_name].value
         - type: FromCompositeFieldPath
           fromFieldPath: spec.tags
-          toFieldPath: spec.forProvider.vars[1].value
+          toFieldPath: spec.forProvider.vars[tags].value
         - type: FromCompositeFieldPath
           fromFieldPath: spec.tags
           toFieldPath: status.tags
