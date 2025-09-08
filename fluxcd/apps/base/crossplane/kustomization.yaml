@@ -6,6 +6,7 @@ resources:
   - repository.yaml
   - release.yaml
   - provider-opentofu.yaml
+  - provider-azure.yaml
   - azure-providerconfig.yaml
   - opentofu-credentials.yaml
   # - test-rg.yaml
