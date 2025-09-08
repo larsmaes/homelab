@@ -1,8 +1,8 @@
 apiVersion: example.larsmaes.nl/v1
 kind: App
 metadata:
-  namespace: default
   name: my-app
+  namespace: default
 spec:
   tags:
-    businessOnwer: "Lars Maes"
+    businessOwner: "Lars Maes"
