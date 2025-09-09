@@ -22,6 +22,8 @@ spec:
             tags:
               description: Key value of tags
               type: object
+              additionalProperties:
+                type: string
           required:
           - tags
         status:
