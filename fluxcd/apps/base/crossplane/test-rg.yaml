@@ -7,5 +7,5 @@ spec:
   forProvider:
     location: West Europe
   providerConfigRef:
-    kind: ProviderConfig
+    kind: ClusterProviderConfig
     name: default

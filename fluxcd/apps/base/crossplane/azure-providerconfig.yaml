@@ -1,8 +1,7 @@
 apiVersion: azure.m.upbound.io/v1beta1
 metadata:
   name: default
-  namespace: crossplane-system
-kind: ProviderConfig
+kind: ClusterProviderConfig
 spec:
   credentials:
     source: Secret
