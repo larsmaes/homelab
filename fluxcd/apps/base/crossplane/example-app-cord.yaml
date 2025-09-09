@@ -32,3 +32,5 @@ spec:
             tags:
               description: The tags.
               type: object
+              additionalProperties:
+                type: string
