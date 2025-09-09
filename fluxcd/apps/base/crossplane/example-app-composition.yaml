@@ -37,6 +37,8 @@ spec:
         - type: FromCompositeFieldPath
           fromFieldPath: spec.tags
           toFieldPath: spec.forProvider.tags
+          policy:
+            toFieldPath: MergeObjects
         - type: ToCompositeFieldPath
           fromFieldPath: status.atProvider.tags
           toFieldPath: status.tags
