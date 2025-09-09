@@ -6,10 +6,11 @@ resources:
   - repository.yaml
   - release.yaml
   - provider-opentofu.yaml
+  - provider-azure.yaml
   - azure-providerconfig.yaml
   - opentofu-credentials.yaml
-  - test-rg.yaml
-  - example-app-cord.yaml
+  # - test-rg.yaml
+  # - example-app-cord.yaml
   - function-patch-and-transform.yaml
-  - example-app-composition.yaml
+  # - example-app-composition.yaml
   # - app.yaml
