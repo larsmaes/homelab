@@ -5,12 +5,16 @@ resources:
   - namespace.yaml
   - repository.yaml
   - release.yaml
-  - provider-opentofu.yaml
   - provider-azure.yaml
-  - azure-providerconfig.yaml
-  - opentofu-credentials.yaml
-  # - test-rg.yaml
-  # - example-app-cord.yaml
+  - azure-credentials.yaml
   - function-patch-and-transform.yaml
-  # - example-app-composition.yaml
-  # - app.yaml
+  
+
+# Old stuff
+# - azure-providerconfig.yaml
+# - opentofu-credentials.yaml
+# - test-rg.yaml
+# - example-app-cord.yaml
+# - example-app-composition.yaml
+# - app.yaml
+# - provider-opentofu.yaml
