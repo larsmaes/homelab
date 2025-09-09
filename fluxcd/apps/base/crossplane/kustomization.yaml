@@ -9,6 +9,7 @@ resources:
   - azure-credentials.yaml
   - azure-providerconfig.yaml
   - function-patch-and-transform.yaml
+  - test-rg.yaml
   
 
 # Old stuff

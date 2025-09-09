@@ -1,25 +1,11 @@
-apiVersion: opentofu.upbound.io/v1beta1
-kind: Workspace
+apiVersion: azure.m.upbound.io/v1beta1
+kind: ResourceGroup
 metadata:
   name: example-rg
+  namespace: default
 spec:
   forProvider:
-    # Workspaces default to using a remote source - like workspace-remote.yaml.
-    # For simple cases you can use an inline source to specify the content of
-    # main.tf as opaque, inline HCL.
-    source: Inline
-    module: |
-
-      resource "random_id" "rg" {
-        byte_length = 4
-      }
-
-      resource "azurerm_resource_group" "rg" {
-        name      = "rg-crossplane-test-${random_id.rg.hex}"
-        location  = "westeurope"
-        tags = {
-          managed-by = "crossplane"
-        }
-      }
+    location: West Europe
   providerConfigRef:
-    name: azure-westeurope
+    kind: ProviderConfig
+    name: default
