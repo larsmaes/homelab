@@ -38,7 +38,7 @@ spec:
           fromFieldPath: spec.tags
           toFieldPath: spec.forProvider.tags
         - type: ToCompositeFieldPath
-          fromFieldPath: status.forProvider.tags
+          fromFieldPath: status.atProvider.tags
           toFieldPath: status.tags
         - type: FromCompositeFieldPath
           fromFieldPath: metadata.name
