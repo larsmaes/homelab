@@ -17,53 +17,28 @@ spec:
       resources:
       - name: resource-group
         base:
-          apiVersion: opentofu.upbound.io/v1beta1
-          kind: Workspace
+          apiVersion: azure.m.upbound.io/v1beta1
+          kind: ResourceGroup
           metadata:
             name: example-rg
-            annotations:
-              crossplane.io/composition-resource-name: resource-group
+            namespace: default
           spec:
             forProvider:
-              source: Inline
-              module: |
-                variable "rg_name" {
-                  type = string
-                }
-
-                variable "tags"
-                {
-                  type = map(string)
-                  default = {}
-                }
-
-                resource "random_id" "rg" {
-                  byte_length = 4
-                }
-
-                resource "azurerm_resource_group" "rg" {
-                  name      = "rg-${var.rg_name}-${random_id.rg.hex}"
-                  location  = "westeurope"
-                  tags = merge(var.tags, {
-                    managed-by = "crossplane"
-                  })
-                }
-              varmap:
-                rg_name: "example"
-                tags: 
-                  example.larsmaes.io/managed-by: crossplane
+              location: West Europe
+              tags: {}
             providerConfigRef:
-              name: azure-westeurope
-        patches:
-        - type: FromCompositeFieldPath
-          fromFieldPath: metadata.name
-          toFieldPath: spec.forProvider.vars[rg_name].value
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.tags
-          toFieldPath: spec.forProvider.vars[tags].value
-        - type: FromCompositeFieldPath
-          fromFieldPath: spec.tags
-          toFieldPath: status.tags
-        - type: FromCompositeFieldPath
-          fromFieldPath: metadata.name
-          toFieldPath: metadata.labels[example.larsmaes.io/app]
+              kind: ClusterProviderConfig
+              name: default
+          patches:
+          - type: FromCompositeFieldPath
+            fromFieldPath: metadata.name
+            toFieldPath: metadata.name
+          - type: FromCompositeFieldPath
+            fromFieldPath: spec.tags
+            toFieldPath: spec.forProvider.tags
+          - type: FromCompositeFieldPath
+            fromFieldPath: spec.tags
+            toFieldPath: status.tags
+          - type: FromCompositeFieldPath
+            fromFieldPath: metadata.name
+            toFieldPath: metadata.labels[example.larsmaes.io/app]
