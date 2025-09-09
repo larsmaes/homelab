@@ -1,9 +1,9 @@
-apiVersion: apiextensions.crossplane.io/v1
+apiVersion: apiextensions.crossplane.io/v2
 kind: CompositeResourceDefinition
 metadata:
   name: apps.example.larsmaes.nl
 spec:
-  # scope: Cluster
+  scope: Namespaced
   group: example.larsmaes.nl
   names:
     kind: App
