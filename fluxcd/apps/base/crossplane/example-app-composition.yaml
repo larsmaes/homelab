@@ -25,7 +25,8 @@ spec:
           spec:
             forProvider:
               location: West Europe
-              tags: {}
+              tags: 
+                managed-by: crossplane
             providerConfigRef:
               kind: ClusterProviderConfig
               name: default
