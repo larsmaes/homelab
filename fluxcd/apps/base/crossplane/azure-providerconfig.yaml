@@ -1,7 +1,7 @@
 apiVersion: azure.m.upbound.io/v1beta1
 metadata:
   name: default
-  nanespace: crossplane-system
+  namespace: crossplane-system
 kind: ProviderConfig
 spec:
   credentials:
