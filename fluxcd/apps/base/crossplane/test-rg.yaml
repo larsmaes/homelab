@@ -9,3 +9,4 @@ spec:
   providerConfigRef:
     kind: ProviderConfig
     name: default
+    namespace: crossplane-system
