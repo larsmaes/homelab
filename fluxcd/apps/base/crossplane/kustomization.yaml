@@ -11,7 +11,7 @@ resources:
   - function-patch-and-transform.yaml
   - example-app-cord.yaml
   - example-app-composition.yaml
-  - app.yaml
+  # - app.yaml
   # - test-rg.yaml
   
 
