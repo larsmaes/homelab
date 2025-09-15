@@ -24,6 +24,7 @@ spec:
     provider: sops
     secretRef:
       name: sops-gpg
+      namespace: flux-system
   timeout: 3m0s
   targetNamespace: crossplane-system
   wait: true
