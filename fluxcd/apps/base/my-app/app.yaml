@@ -5,4 +5,4 @@ metadata:
   namespace: my-app
 spec:
   tags:
-    businessOwner: "Lars Maes"
+    businessOwner: "Lars"

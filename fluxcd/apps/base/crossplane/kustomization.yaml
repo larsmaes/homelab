@@ -1,8 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-# namespace: test-application
 resources:
-  # - namespace.yaml
   - repository.yaml
   - release.yaml
   - provider-azure.yaml
@@ -11,15 +9,3 @@ resources:
   - function-patch-and-transform.yaml
   - example-app-cord.yaml
   - example-app-composition.yaml
-  # - app.yaml
-  # - test-rg.yaml
-  
-
-# Old stuff
-# - azure-providerconfig.yaml
-# - opentofu-credentials.yaml
-# - test-rg.yaml
-# - example-app-cord.yaml
-# - example-app-composition.yaml
-# - app.yaml
-# - provider-opentofu.yaml
