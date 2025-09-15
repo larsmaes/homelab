@@ -4870,6 +4870,7 @@ spec:
         - --enable-leader-election
         - --storage-path=/data
         - --storage-adv-addr=source-controller.$(RUNTIME_NAMESPACE).svc.cluster.local.
+        - --requeue-dependency=5s
         env:
         - name: RUNTIME_NAMESPACE
           valueFrom:
@@ -6761,6 +6762,7 @@ spec:
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
+        - --requeue-dependency=5s
         env:
         - name: RUNTIME_NAMESPACE
           valueFrom:
