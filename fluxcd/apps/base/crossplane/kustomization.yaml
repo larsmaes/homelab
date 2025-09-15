@@ -6,7 +6,7 @@ resources:
   - repository.yaml
   - release.yaml
   - provider-azure.yaml
-  - azure-credentials.yaml
+  # - azure-credentials.yaml
   - azure-providerconfig.yaml
   - function-patch-and-transform.yaml
   - example-app-cord.yaml
