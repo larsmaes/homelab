@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - ../base/test-application
   # - ../base/kratix
-  - crossplane.yaml
+  # - crossplane.yaml
   # - my-app.yaml
