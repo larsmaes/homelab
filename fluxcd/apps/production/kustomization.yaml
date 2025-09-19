@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../base/test-application
-  - kro.yaml
+  # - kro.yaml
   # - ../base/kratix
-  # - crossplane.yaml
+  - crossplane.yaml
   # - my-app.yaml
