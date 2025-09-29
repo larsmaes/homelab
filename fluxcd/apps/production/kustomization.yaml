@@ -6,3 +6,4 @@ resources:
   # - ../base/kratix
   - crossplane.yaml
   # - my-app.yaml
+  - openwebrx.yaml

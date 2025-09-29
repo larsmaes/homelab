@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openwebrx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openwebrx
+  template:
+    metadata:
+      labels:
+        app: openwebrx
+    spec:
+      containers:
+      - name: openwebrx
+        image: jketterl/openwebrx-rtltcp:latest-x86_64
+        ports:
+        - containerPort: 8073
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: openwebrx-settings
+          mountPath: /var/lib/openwebrx
+        - name: openwebrx-temp
+          mountPath: /tmp/openwebrx
+      volumes:
+      - name: openwebrx-settings
+        configMap:
+          name: openwebrx-config-1
+      - name: openwebrx-temp
+        emptyDir:
+          medium: Memory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: openwebrx-service
+spec:
+  selector:
+    app: openwebrx
+  ports:
+  - name: http
+    port: 8073
+    targetPort: 8073
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: openwebrx-ingress
+  annotations: 
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:  
+  rules:
+  - host: openwebrx.homelab.larsmaes.nl
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: openwebrx-service
+            port:
+              number: 8073
+  tls:
+    - hosts: 
+        - openwebrx.homelab.larsmaes.nl
+      secretName: tls-2024-openwebrx-homelab
