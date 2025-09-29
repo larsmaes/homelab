@@ -14,19 +14,29 @@ spec:
     spec:
       containers:
       - name: openwebrx
-        image: jketterl/openwebrx-rtltcp:latest-x86_64
+        image: slechev/openwebrxplus-softmbe:latest
         ports:
         - containerPort: 8073
         imagePullPolicy: Always
         volumeMounts:
+        - name: openwebrx-etcsettings
+          mountPath: /etc/openwebrx
         - name: openwebrx-settings
           mountPath: /var/lib/openwebrx
+        - name: openwebrx-plugins
+          mountPath: /usr/lib/python3/dist-packages/htdocs/plugins
         - name: openwebrx-temp
-          mountPath: /tmp/openwebrx
+          mountPath: /tmp
       volumes:
+      - name: openwebrx-etcsettings
+        persistentVolumeClaim:
+          claimName: openwebrx-etc-pvc
       - name: openwebrx-settings
         persistentVolumeClaim:
           claimName: openwebrx-pvc
+      - name: openwebrx-plugins
+        persistentVolumeClaim:
+          claimName: openwebrx-plugins-pvc
         # configMap:
         #   name: openwebrx-config-1
       - name: openwebrx-temp
@@ -71,7 +81,29 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: openwebrx-etc-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
   name: openwebrx-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: openwebrx-plugins-pvc
 spec:
   accessModes:
     - ReadWriteOnce
