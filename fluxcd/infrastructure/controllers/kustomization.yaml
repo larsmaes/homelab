@@ -10,3 +10,4 @@ resources:
   # - capacitor.yaml
   - metricsserver.yaml
   - headlamp.yaml
+  - envoy-gateway.yaml
