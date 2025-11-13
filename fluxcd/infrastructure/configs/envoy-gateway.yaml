@@ -16,7 +16,7 @@ metadata:
 spec:
   gatewayClassName: eg
   addresses:
-    - type: IPaddress
+    - type: IPAddress
       value: 192.168.2.150
   listeners:
     - name: http
