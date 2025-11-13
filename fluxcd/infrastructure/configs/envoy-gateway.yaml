@@ -11,17 +11,14 @@ kind: Gateway
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    metallb.io/loadBalancerIPs: 192.168.2.150
   name: eg
   namespace: envoy-gateway-system
 spec:
   gatewayClassName: eg
-  addresses:
-    - type: IPAddress
-      value: 192.168.2.150
   listeners:
     - name: http
       protocol: HTTP
-      
       port: 80
       allowedRoutes:
         namespaces:
