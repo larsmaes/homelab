@@ -4,3 +4,4 @@ resources:
   - metallb.yaml
   - cluster-issuer.yaml
   - nfs-storageclass.yaml
+  - envoy-gateway.yaml
