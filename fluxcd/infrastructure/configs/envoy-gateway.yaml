@@ -15,9 +15,13 @@ metadata:
   namespace: envoy-gateway-system
 spec:
   gatewayClassName: eg
+  addresses:
+    - type: IPaddress
+      value: 192.168.2.150
   listeners:
     - name: http
       protocol: HTTP
+      
       port: 80
       allowedRoutes:
         namespaces:
