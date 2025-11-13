@@ -9,6 +9,8 @@ spec:
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   name: eg
   namespace: envoy-gateway-system
 spec:
@@ -17,3 +19,8 @@ spec:
     - name: https
       protocol: HTTPS
       port: 444
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: eg-tls
+            kind: Secret
