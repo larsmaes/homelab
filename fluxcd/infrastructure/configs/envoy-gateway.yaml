@@ -25,12 +25,6 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    - name: https
-      protocol: HTTPS
-      hostname: "*.homelab.larsmaes.nl"
-      port: 444
-      tls:
-        mode: Terminate
-        certificateRefs:
-          - name: eg-tls
-            kind: Secret
+  allowedListeners:
+    namespaces:
+      from: All
