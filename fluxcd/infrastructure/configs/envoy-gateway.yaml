@@ -41,6 +41,9 @@ spec:
       protocol: HTTPS
       hostname: "web.homelab.larsmaes.nl"
       port: 443
+      allowedRoutes:
+        namespaces:
+          from: All
       tls:
         mode: Terminate
         certificateRefs:
