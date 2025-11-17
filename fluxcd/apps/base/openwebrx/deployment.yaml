@@ -113,6 +113,8 @@ spec:
 ---
 apiVersion: gateway.networking.x-k8s.io/v1alpha1
 kind: XListenerSet
+metadata:
+  name: openwebrx-listeners
 spec:
   parentRef:
     name: eg
