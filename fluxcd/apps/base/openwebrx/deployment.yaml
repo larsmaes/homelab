@@ -55,28 +55,28 @@ spec:
     port: 8073
     targetPort: 8073
 ---
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: openwebrx-ingress
-  annotations: 
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-spec:  
-  rules:
-  - host: openwebrx.homelab.larsmaes.nl
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: openwebrx-service
-            port:
-              number: 8073
-  tls:
-    - hosts: 
-        - openwebrx.homelab.larsmaes.nl
-      secretName: tls-2024-openwebrx-homelab
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: openwebrx-ingress
+#   annotations: 
+#     cert-manager.io/cluster-issuer: letsencrypt-prod
+# spec:  
+#   rules:
+#   - host: openwebrx.homelab.larsmaes.nl
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: openwebrx-service
+#             port:
+#               number: 8073
+#   tls:
+#     - hosts: 
+#         - openwebrx.homelab.larsmaes.nl
+#       secretName: tls-2024-openwebrx-homelab
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -110,3 +110,19 @@ spec:
   resources:
     requests:
       storage: 1Gi
+---
+apiVersion: gateway.networking.x-k8s.io/v1alpha1
+kind: XListenerSet
+spec:
+  parentRef:
+    name: eg
+    namespace: envoy-gateway-system
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: openwebrx.homelab.larsmaes.nl
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: tls-2024-openwebrx-homelab
