@@ -25,6 +25,21 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-  allowedListeners:
-    namespaces:
-      from: All
+    - name: https
+      protocol: HTTPS
+      hostname: "openwebrx.homelab.larsmaes.nl"
+      port: 444
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: eg-tls-openwebrx
+            kind: Secret
+    - name: https
+      protocol: HTTPS
+      hostname: "web.homelab.larsmaes.nl"
+      port: 444
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: eg-tls-web
+            kind: Secret
