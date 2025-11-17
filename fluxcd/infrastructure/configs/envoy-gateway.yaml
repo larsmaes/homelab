@@ -28,7 +28,7 @@ spec:
     - name: openwebrx-https
       protocol: HTTPS
       hostname: "openwebrx.homelab.larsmaes.nl"
-      port: 444
+      port: 443
       tls:
         mode: Terminate
         certificateRefs:
@@ -37,7 +37,7 @@ spec:
     - name: web-https
       protocol: HTTPS
       hostname: "web.homelab.larsmaes.nl"
-      port: 444
+      port: 443
       tls:
         mode: Terminate
         certificateRefs:
