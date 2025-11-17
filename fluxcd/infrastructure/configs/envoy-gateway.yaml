@@ -25,7 +25,7 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-    - name: https
+    - name: openwebrx-https
       protocol: HTTPS
       hostname: "openwebrx.homelab.larsmaes.nl"
       port: 444
@@ -34,7 +34,7 @@ spec:
         certificateRefs:
           - name: eg-tls-openwebrx
             kind: Secret
-    - name: https
+    - name: web-https
       protocol: HTTPS
       hostname: "web.homelab.larsmaes.nl"
       port: 444
