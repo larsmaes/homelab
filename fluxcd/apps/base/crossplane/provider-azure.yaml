@@ -4,11 +4,11 @@ kind: Provider
 metadata:
   name: provider-azure-keyvault
 spec:
-  package: xpkg.upbound.io/upbound/provider-azure-keyvault:v2
+  package: xpkg.upbound.io/upbound/provider-azure-keyvault:v2.2
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: upbound-provider-azure-authorization
 spec:
-  package: xpkg.upbound.io/upbound/provider-azure-authorization:v2
+  package: xpkg.upbound.io/upbound/provider-azure-authorization:v2.2
