@@ -24,7 +24,7 @@ spec:
   chart:
     spec:
       chart: gateway-helm
-      version: v1.6.0
+      version: "*"
       sourceRef:
         kind: HelmRepository
         name: envoy-gateway
