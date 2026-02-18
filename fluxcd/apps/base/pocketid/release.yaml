@@ -1,0 +1,16 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: pocketid
+  namespace: pocketid
+spec:
+  releaseName: pocketid
+  targetNamespace: pocketid
+  chart:
+    spec:
+      chart: pocket-id
+      sourceRef:
+        kind: HelmRepository
+        name: anza-labs
+        namespace: pocketid
+  interval: 1h0m0s

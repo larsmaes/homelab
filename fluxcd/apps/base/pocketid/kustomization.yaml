@@ -3,3 +3,4 @@ kind: Kustomization
 # namespace: test-application
 resources:
   - release.yaml
+  - repository.yaml
