@@ -17,4 +17,4 @@ spec:
   values:
     pocketID:
       image:
-        tag: 2.2.0
+        tag: v2
