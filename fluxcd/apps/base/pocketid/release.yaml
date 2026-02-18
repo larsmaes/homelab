@@ -14,3 +14,7 @@ spec:
         name: anza-labs
         namespace: pocketid
   interval: 1h0m0s
+  values:
+    pocketID:
+      image:
+        tag: 2.2.0
