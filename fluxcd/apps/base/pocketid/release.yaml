@@ -11,10 +11,10 @@ spec:
       chart: pocket-id
       sourceRef:
         kind: HelmRepository
-        name: anza-labs
+        name: pocketid
         namespace: pocketid
   interval: 1h0m0s
-  values:
-    pocketID:
-      image:
-        tag: v2
+  # values:
+  #   pocketID:
+  #     image:
+  #       tag: v2

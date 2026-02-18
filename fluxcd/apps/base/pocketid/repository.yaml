@@ -2,8 +2,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: anza-labs
+  name: pocketid
   namespace: pocketid
 spec:
   interval: 24h
-  url: https://anza-labs.github.io/charts
+  url: oci://ghcr.io/hobbit44/pocket-id-helm
