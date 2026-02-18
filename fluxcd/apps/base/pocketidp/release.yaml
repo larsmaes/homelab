@@ -2,10 +2,10 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: pocketidp
-  namespace: pocket-idp
+  namespace: pocketidp
 spec:
   releaseName: pocketidp
-  targetNamespace: pocket-idp
+  targetNamespace: pocketidp
   chart:
     spec:
       chart: pocketidp
