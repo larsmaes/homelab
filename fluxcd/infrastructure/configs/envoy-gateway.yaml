@@ -49,3 +49,15 @@ spec:
         certificateRefs:
           - name: eg-tls-web
             kind: Secret
+    - name: pocketid-https
+      protocol: HTTPS
+      hostname: "idp.homelab.larsmaes.nl"
+      port: 443
+      allowedRoutes:
+        namespaces:
+          from: All
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: eg-tls-pocketid
+            kind: Secret
