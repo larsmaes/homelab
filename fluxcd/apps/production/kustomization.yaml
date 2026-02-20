@@ -7,4 +7,3 @@ resources:
   - crossplane.yaml
   # - my-app.yaml
   - openwebrx.yaml
-  - pocketid.yaml
