@@ -14,7 +14,6 @@ spec:
         name: pocketid
         namespace: pocketid
   interval: 1h0m0s
-  # values:
-  #   pocketID:
-  #     image:
-  #       tag: v2
+  values:
+    image:
+      tag: v2
