@@ -6,6 +6,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
+    profile: shortlived
     email: lars.maes@gmail.com
     privateKeySecretRef:
       name: letsencrypt-prod
