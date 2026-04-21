@@ -11,3 +11,4 @@ resources:
   - metricsserver.yaml
   - headlamp.yaml
   - envoy-gateway.yaml
+  - descheduler.yaml
