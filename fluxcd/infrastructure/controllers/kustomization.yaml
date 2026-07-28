@@ -17,3 +17,5 @@ secretGenerator:
   - name: externaldns-values
     files:
       - "externaldns-values.yaml"
+configurations:
+  - kustomizeconfig.yaml
