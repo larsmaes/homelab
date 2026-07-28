@@ -13,3 +13,7 @@ resources:
   - envoy-gateway.yaml
   - descheduler.yaml
   - externaldns.yaml
+secretGenerator:
+  - name: externaldns-values
+    files:
+      - externaldns-values.yaml

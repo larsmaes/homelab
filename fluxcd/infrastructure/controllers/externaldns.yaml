@@ -30,8 +30,7 @@ spec:
         name: externaldns
         namespace: externaldns
       interval: 12h
-  values:
-    provider: godaddy
-    extraArgs:
-      - --godaddy-api-key=YOUR_API_KEY
-      - --godaddy-api-secret=YOUR_API_SECRET
+  valuesFrom:
+    - kind: Secret
+      name: externaldns-values
+  
