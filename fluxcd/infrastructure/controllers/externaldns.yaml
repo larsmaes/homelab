@@ -33,4 +33,8 @@ spec:
   valuesFrom:
     - kind: Secret
       name: externaldns-values
+  values:
+    provider: godaddy
+    sources:
+      - httproute
   
