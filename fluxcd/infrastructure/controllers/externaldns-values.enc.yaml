@@ -1,10 +1,14 @@
 provider: ENC[AES256_GCM,data:mxPCV0b2aA==,iv:VNjrHk87gOUwfgBSECYN5fu60bIWZhi9LcWjgiZZUgE=,tag:higDCoMN9+IaZDkOPu4xKw==,type:str]
+sources:
+    - ENC[AES256_GCM,data:x3WHyTCfgw==,iv:Vl9xWNt+Doc/2Hgcr9UEk2ZrX69aArtEYyG/kPB2fv0=,tag:0MUPPCJLwC48+oC/IvRRMQ==,type:str]
+    - ENC[AES256_GCM,data:qb0kt+oRcnA=,iv:XZ9HvxwSOa19ygs7dJzxbcKd7FR6A9oliUa+JivFgso=,tag:JTBCe7giVp1r6bqoiejk0Q==,type:str]
+    - ENC[AES256_GCM,data:QjG0mtG8Nuc4hZVKoZjqK+I=,iv:ZrCFzgpmHMZzUDI6zjW/uTAO0sYZbBd/CVL9wCwpaVY=,tag:YYJHAE608GCRudf3euJaag==,type:str]
 extraArgs:
     - ENC[AES256_GCM,data:6mVXQR2Ql1bq44EKg5epIK75ZIo41CnhuF6w+H1bAMjMdv9kU7zKJ923vWf0QNyve0wNODM=,iv:u4Fx4y2euc2WOrAq5KK4q7K1Tko2668aagxTXhTiUNM=,tag:aINJZVysaSHYR0zCMgG+lg==,type:str]
     - ENC[AES256_GCM,data:2nAxjNtsHV2YVFmP8GngPLZkGGXwm8QaYbxz7pZx6nK4EjP/v8mXGro6dg==,iv:OR3thOfKR3NYULz6nwzljnUxclNzUVDtzopHL0kukNI=,tag:rMnvf6Db1+2j/1iVHwVGrQ==,type:str]
 sops:
-    lastmodified: "2026-07-28T14:09:23Z"
-    mac: ENC[AES256_GCM,data:tBA/AOztttdtuT5r7esqjBr7NocnJONq5NpU7bXjcvOh6kf7gIFYrVf7dR/h+5zn22xK8372NQb7Y9TrU+6F4YaG2ZezNGd9MselMQyTsg5V1x0IgBXBYNqJp3a3jMWKU7nnWgjT7y/bi2j6xqmUldX2nUmy2KCXrNgCGlElrzA=,iv:QwDNsW6uRilUjiPlUUbBUsJBhFbshONV11aipWS+DH4=,tag:3X4zGWVQZ4pEHy275eqpYg==,type:str]
+    lastmodified: "2026-07-28T14:21:47Z"
+    mac: ENC[AES256_GCM,data:UCyUODJG9pMBmPygF13sH7ktoeCUyEn0qJrNDoRfsJzoG9/JhaURMzDBzoZnIpCqxAYuttYgGgpZNuZ0OiJy6YW7GotmXZI6aeQeSX5hsDpz0mfdF4PXmQ24VVbTSlx37nPpgQpQ3jYeLzyRBrUb8dLUDzVzgXubHtBWEWcQ8OE=,iv:AmXcR5wGeYqFyOfIStKS3qVk/82sowTMjW7BjuzeAeI=,tag:LELvbmnE8SWAgjFC/CPWYQ==,type:str]
     pgp:
         - created_at: "2026-07-28T13:34:50Z"
           enc: |-
