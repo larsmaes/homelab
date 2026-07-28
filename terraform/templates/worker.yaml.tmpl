@@ -1,9 +1,7 @@
 machine:
   install:
     disk: ${install_disk}
-    image: factory.talos.dev/installer/${talos_image_id}:${talos_version}
-  network:
-    hostname: ${hostname}
+    image: factory.talos.dev/nocloud-installer-secureboot/${talos_image_id}:${talos_version}
   registries:
     config:
       ghcr.io:
@@ -12,4 +10,9 @@ machine:
   kubelet:
     extraArgs:
       rotate-server-certificates: true
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+hostname: ${hostname} 
+auto: off
   

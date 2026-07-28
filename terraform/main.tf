@@ -1,12 +1,12 @@
 locals {
   talos_image_id = jsondecode(data.http.talos_image.response_body).id
-  talos_iso      = "https://factory.talos.dev/image/${local.talos_image_id}/${var.talos_version}/nocloud-amd64.iso"
+  talos_iso      = "https://factory.talos.dev/image/${local.talos_image_id}/${var.talos_version}/nocloud-amd64-secureboot.iso"
 }
 
-resource "proxmox_virtual_environment_download_file" "talos_amd64_iso" {
+resource "proxmox_download_file" "talos_amd64_iso" {
   content_type = "iso"
   datastore_id = "local"
-  file_name    = "talos-${var.talos_version}-nocloud-amd64.iso"
+  file_name    = "talos-${var.talos_version}-nocloud-amd64-secureboot.iso"
   node_name    = "pve"
   url          = local.talos_iso
 }
@@ -26,6 +26,8 @@ resource "proxmox_virtual_environment_vm" "talos_node" {
   tags        = ["terraform", "talos", each.value.node_type]
 
   node_name = each.value.proxmox_node
+  machine   = "q35,viommu=virtio"
+  bios      = "ovmf"
 
   agent {
     # read 'Qemu guest agent' section, change to true only when ready
@@ -47,11 +49,11 @@ resource "proxmox_virtual_environment_vm" "talos_node" {
 
   memory {
     dedicated = each.value.memory
-    floating  = each.value.memory
+    floating  = 0
   }
 
   cdrom {
-    file_id   = proxmox_virtual_environment_download_file.talos_amd64_iso.id
+    file_id   = proxmox_download_file.talos_amd64_iso.id
     interface = "ide3"
   }
 
@@ -70,6 +72,10 @@ resource "proxmox_virtual_environment_vm" "talos_node" {
 
   network_device {
     bridge = "vmbr0"
+  }
+
+  efi_disk {
+    type = "4m"
   }
 
   disk {

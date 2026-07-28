@@ -1,9 +1,7 @@
 machine:
   install:
     disk: ${install_disk}
-    image: factory.talos.dev/installer/${talos_image_id}:${talos_version}
-  network:
-    hostname: ${hostname}
+    image: factory.talos.dev/nocloud-installer-secureboot/${talos_image_id}:${talos_version}
   registries:
     config:
       ghcr.io:
@@ -35,5 +33,9 @@ cluster:
     - name: fluxcd-sync
       contents: |-
         ${indent(8,fluxcd_sync)}
-    
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+hostname: ${hostname} 
+auto: off
     
