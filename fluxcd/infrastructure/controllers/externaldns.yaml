@@ -30,3 +30,5 @@ spec:
         name: externaldns
         namespace: externaldns
       interval: 12h
+  values:
+    provider: godaddy
