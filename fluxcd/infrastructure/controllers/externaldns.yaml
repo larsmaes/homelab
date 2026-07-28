@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: externaldns
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: externaldns
+  namespace: externaldns
+spec:
+  type: default
+  interval: 24h
+  url: https://kubernetes-sigs.github.io/external-dns
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: externaldns
+  namespace: externaldns
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: external-dns
+      version: "*"
+      sourceRef:
+        kind: HelmRepository
+        name: externaldns
+        namespace: externaldns
+      interval: 12h

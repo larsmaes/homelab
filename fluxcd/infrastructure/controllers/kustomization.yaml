@@ -12,3 +12,4 @@ resources:
   - headlamp.yaml
   - envoy-gateway.yaml
   - descheduler.yaml
+  - externaldns.yaml
