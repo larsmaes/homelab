@@ -17,5 +17,6 @@ secretGenerator:
   - name: externaldns-values
     files:
       - values.yaml=externaldns-values.yaml
+    namespace: flux-system
 configurations:
   - kustomizeconfig.yaml
