@@ -16,4 +16,4 @@ resources:
 secretGenerator:
   - name: externaldns-values
     files:
-      - externaldns-values.yaml
+      - "externaldns-values.yaml"
