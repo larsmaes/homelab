@@ -18,5 +18,5 @@ secretGenerator:
     files:
       - values.yaml=externaldns-values.yaml
     namespace: externaldns
-configurations:
-  - kustomizeconfig.yaml
+# configurations:
+#   - kustomizeconfig.yaml
