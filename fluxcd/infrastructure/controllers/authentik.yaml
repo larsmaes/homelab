@@ -38,12 +38,18 @@ spec:
             postgresql:
                 password: ENC[AES256_GCM,data:NGgwBMKOntefkzj1dZNSFdmGzEAdQfuf,iv:Ziy2iU/bUJLTnyLCGAukz3FKG43/kzkZjA9iqb2AxnQ=,tag:jGtz/OE/SasZ+B6TlZFh4Q==,type:str]
         server:
-            ingress:
-                # Specify kubernetes ingress controller class name
-                ingressClassName: nginx
-                enabled: true
-                hosts:
-                    - auth.homelab.larsmaes.nl
+            route:
+                main:
+                    enabled: true
+                    hostnames:
+                        - auth.homelab.larsmaes.nl
+            # ingress:
+            #     # Specify kubernetes ingress controller class name
+            #     ingressClassName: nginx
+            #     enabled: true
+            #     hosts:
+            #         - auth.homelab.larsmaes.nl
+                
         postgresql:
             enabled: true
             auth:
