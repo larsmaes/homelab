@@ -43,7 +43,10 @@ spec:
                     enabled: true
                     hostnames:
                         - auth.homelab.larsmaes.nl
-            # ingress:
+                    parentRefs:
+                        - name: eg
+                          namespace: envoy-gateway-system
+            # ingress:d
             #     # Specify kubernetes ingress controller class name
             #     ingressClassName: nginx
             #     enabled: true
