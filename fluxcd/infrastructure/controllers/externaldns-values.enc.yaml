@@ -1,10 +1,9 @@
 extraArgs:
     - ENC[AES256_GCM,data:6mVXQR2Ql1bq44EKg5epIK75ZIo41CnhuF6w+H1bAMjMdv9kU7zKJ923vWf0QNyve0wNODM=,iv:u4Fx4y2euc2WOrAq5KK4q7K1Tko2668aagxTXhTiUNM=,tag:aINJZVysaSHYR0zCMgG+lg==,type:str]
     - ENC[AES256_GCM,data:2nAxjNtsHV2YVFmP8GngPLZkGGXwm8QaYbxz7pZx6nK4EjP/v8mXGro6dg==,iv:OR3thOfKR3NYULz6nwzljnUxclNzUVDtzopHL0kukNI=,tag:rMnvf6Db1+2j/1iVHwVGrQ==,type:str]
-    - ENC[AES256_GCM,data:5URDC4T8Sn+uNDBlHrM=,iv:wrM3lC3RNSQLrawL6N7olA0R3CqhhcD5Tq+3G7v+oIo=,tag:HZDSknh5rRqH67GUW9cbkA==,type:str]
 sops:
-    lastmodified: "2026-10-15T10:03:27Z"
-    mac: ENC[AES256_GCM,data:AiO8knsCH1wdzb9vQCtFFHnD35pjyZjiQADgzqFTm2uCTfuoMbi2F0m1TxJimM0BeIKEDSry52B1IeBNMcGsFBTddRgVsYpVeTdIrxJGfXisWcRbQfA1mKNXSpfjbiJKu/SHdGiyOJd3VCTh4Ga5aTOV8a3BuxoEoP/kVaCiyfE=,iv:SC4Sbqrm95+g0MaMFjCc8rJk7rlCJ3R78iFSbicOVJs=,tag:5fAeQdlEc+YR1PniGLRnIw==,type:str]
+    lastmodified: "2026-10-15T10:11:11Z"
+    mac: ENC[AES256_GCM,data:AdkqcCXRkyWsdjlVOPrE2Un5eVH0lXQyLUwXJCXWhCNKmR3D/LOI3Drg1WW1j0yHfY7rrWKEjpdYKYH9Fv37YljgNxHd+aOUQ/ecrdJ+ea1g8x2t4pllhkv55UQxkOoa5GdylhVXjefm828+ibGb74fsfshdpwoxLOMvd0HeqM4=,iv:4ZlnrqPtNHct9LCBhkrBle+7PFOTwUgJhRsuVrqbbQM=,tag:NyVt04YPp1kSBiYz5MaB1A==,type:str]
     pgp:
         - created_at: "2026-07-28T13:34:50Z"
           enc: |-

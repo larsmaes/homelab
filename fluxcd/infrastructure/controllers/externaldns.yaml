@@ -38,4 +38,5 @@ spec:
     sources:
       - gateway-httproute
     policy: sync
+    interval: 10m
   
