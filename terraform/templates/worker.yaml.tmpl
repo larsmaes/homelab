@@ -1,18 +1,26 @@
 machine:
-  install:
-    disk: ${install_disk}
-    image: factory.talos.dev/nocloud-installer-secureboot/${talos_image_id}:${talos_version}
   registries:
     config:
       ghcr.io:
         auth: 
           auth: ${ghrc_registry_auth}
-  kubelet:
-    extraArgs:
-      rotate-server-certificates: true
 ---
 apiVersion: v1alpha1
 kind: HostnameConfig
 hostname: ${hostname} 
 auto: off
+---
+apiVersion: v1alpha1
+kind: UnattendedInstallConfig
+installer:
+  image: factory.talos.dev/nocloud-installer-secureboot/${talos_image_id}:${talos_version}
+provisioning:
+  diskSelector:
+    match: disk.dev_path == "${install_disk}"
+  wipe: false
+---
+apiVersion: v1alpha1
+kind: KubeletConfig
+extraArgs:
+  rotate-server-certificates: "true"
   
